@@ -1,0 +1,15 @@
+{
+  "graph": {"n":5,"source":0,"edges":[{"u":0,"v":1,"w":0},{"u":1,"v":2,"w":0},{"u":2,"v":0,"w":0},{"u":2,"v":3,"w":1}]},
+  "steps": [
+    {"type":"init","node":0,"deque":[0],"dist":[0,null,null,null,null],"parent":[-1,-1,-1,-1,-1]},
+    {"type":"pop","node":0,"deque":[],"dist":[0,null,null,null,null],"parent":[-1,-1,-1,-1,-1]},
+    {"type":"relax","edge":{"u":0,"v":1,"w":0},"old":null,"new":0,"push":"front","deque":[1],"dist":[0,0,null,null,null],"parent":[-1,0,-1,-1,-1]},
+    {"type":"pop","node":1,"deque":[],"dist":[0,0,null,null,null],"parent":[-1,0,-1,-1,-1]},
+    {"type":"relax","edge":{"u":1,"v":2,"w":0},"old":null,"new":0,"push":"front","deque":[2],"dist":[0,0,0,null,null],"parent":[-1,0,1,-1,-1]},
+    {"type":"pop","node":2,"deque":[],"dist":[0,0,0,null,null],"parent":[-1,0,1,-1,-1]},
+    {"type":"no_improve","edge":{"u":2,"v":0,"w":0},"deque":[],"dist":[0,0,0,null,null],"parent":[-1,0,1,-1,-1]},
+    {"type":"relax","edge":{"u":2,"v":3,"w":1},"old":null,"new":1,"push":"back","deque":[3],"dist":[0,0,0,1,null],"parent":[-1,0,1,2,-1]},
+    {"type":"pop","node":3,"deque":[],"dist":[0,0,0,1,null],"parent":[-1,0,1,2,-1]},
+    {"type":"done","deque":[],"dist":[0,0,0,1,null],"parent":[-1,0,1,2,-1]}
+  ]
+}
