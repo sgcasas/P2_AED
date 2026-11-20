@@ -9,7 +9,7 @@ El programa en C++ ejecuta el algoritmo y guarda cada paso en un JSON. La animac
 ## Software requerido
 
 - g++ con soporte para C++17
-- (Animación) ver la carpeta `animation/`
+- Python 3.10+ y Manim Community v0.22.1 (no requiere LaTeX)
 
 ## Compilar
 
@@ -70,3 +70,15 @@ Cada paso trae una copia de `deque`, `dist` y `parent` (`null` = ∞, `-1` = sin
 
 - Tiempo: O(|V| + |E|). Cada nodo se procesa una vez (las salidas repetidas se saltan en O(1)) y cada arista se revisa una vez. Le gana a Dijkstra, que es O((|V| + |E|) log |V|).
 - Memoria: O(|V| + |E|).
+## Generar el video
+
+```bash
+cd animation
+python -m venv .venv
+# Windows: .venv\Scripts\Activate.ps1   |   Linux/Mac: source .venv/bin/activate
+pip install -r requirements.txt
+manim -qh video.py VideoBFS01
+```
+
+El video queda en `animation/media/videos/video/1080p60/VideoBFS01.mp4`.
+`video.py` lee `steps/ejemplo.json` y `steps/borde.json`: cada cambio en pantalla (deque, distancias, árbol de caminos mínimos y texto de cada paso) sale de la ejecución real del programa en C++.
